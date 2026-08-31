@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "f+G042zcXlQO8rVlFyr9nxz/XaWnoqkY27KNeQxFIywdl5CNTDQy7yWNdu39fxMnv13cOXHwInop3vIMz++FMg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Suraj Singh\\Desktop\\Backend Project\\SimpleApi.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Suraj Singh\\AppData\\Local\\Temp\\cursor-sandbox-cache\\19019cb2a2c0a296e5badb57b72b718d\\nuget\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
+    "C:\\Users\\Suraj Singh\\AppData\\Local\\Temp\\cursor-sandbox-cache\\19019cb2a2c0a296e5badb57b72b718d\\nuget\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\Suraj Singh\\AppData\\Local\\Temp\\cursor-sandbox-cache\\19019cb2a2c0a296e5badb57b72b718d\\nuget\\swashbuckle.aspnetcore\\6.5.0\\swashbuckle.aspnetcore.6.5.0.nupkg.sha512",
+    "C:\\Users\\Suraj Singh\\AppData\\Local\\Temp\\cursor-sandbox-cache\\19019cb2a2c0a296e5badb57b72b718d\\nuget\\swashbuckle.aspnetcore.swagger\\6.5.0\\swashbuckle.aspnetcore.swagger.6.5.0.nupkg.sha512",
+    "C:\\Users\\Suraj Singh\\AppData\\Local\\Temp\\cursor-sandbox-cache\\19019cb2a2c0a296e5badb57b72b718d\\nuget\\swashbuckle.aspnetcore.swaggergen\\6.5.0\\swashbuckle.aspnetcore.swaggergen.6.5.0.nupkg.sha512",
+    "C:\\Users\\Suraj Singh\\AppData\\Local\\Temp\\cursor-sandbox-cache\\19019cb2a2c0a296e5badb57b72b718d\\nuget\\swashbuckle.aspnetcore.swaggerui\\6.5.0\\swashbuckle.aspnetcore.swaggerui.6.5.0.nupkg.sha512"
+  ],
+  "logs": []
+}
