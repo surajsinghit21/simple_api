@@ -9,7 +9,7 @@ public class SimpleController : ControllerBase
     [HttpGet("hello")]
     public string Hello()
     {
-        return "Hello from Simple API.";
+        return "Hello from Suraj.";
     }
 
     [HttpGet("status")]
