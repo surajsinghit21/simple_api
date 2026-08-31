@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 env:
-  DOTNET_VERSION: "6.0.x"
+  DOTNET_VERSION: "8.0.x"
   AWS_REGION: ${{ secrets.AWS_REGION }}
   EB_APPLICATION_NAME: ${{ secrets.EB_APPLICATION_NAME }}
   EB_ENVIRONMENT_NAME: ${{ secrets.EB_ENVIRONMENT_NAME }}
@@ -24,10 +24,16 @@ jobs:
           dotnet-version: ${{ env.DOTNET_VERSION }}
 
       - name: Publish
-        run: dotnet publish SimpleApi.csproj -c Release -o ./publish
+        run: >
+          dotnet publish SimpleApi.csproj
+          -c Release
+          -o ./publish
 
-      - name: Add Procfile
-        run: cp Procfile ./publish/Procfile
+      - name: Prepare Elastic Beanstalk bundle
+        run: |
+          printf 'web: dotnet ./SimpleApi.dll --urls http://0.0.0.0:5000\n' > ./publish/Procfile
+          mkdir -p ./publish/.ebextensions
+          cp .ebextensions/*.config ./publish/.ebextensions/
 
       - name: Zip deployment package
         run: |

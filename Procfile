@@ -1,1 +1,1 @@
-web: dotnet ./SimpleApi.dll
+web: dotnet ./SimpleApi.dll --urls http://0.0.0.0:5000
