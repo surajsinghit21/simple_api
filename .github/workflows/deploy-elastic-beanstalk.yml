@@ -7,9 +7,9 @@ on:
 
 env:
   DOTNET_VERSION: "6.0.x"
-  AWS_REGION: ${{ secrets.AWS_REGION }}
-  EB_APPLICATION_NAME: ${{ secrets.EB_APPLICATION_NAME }}
-  EB_ENVIRONMENT_NAME: ${{ secrets.EB_ENVIRONMENT_NAME }}
+  AWS_REGION: "ap-south-1"
+  EB_APPLICATION_NAME: "simple_api"
+  EB_ENVIRONMENT_NAME: "Simpleapi-env"
 
 jobs:
   build-and-deploy:
