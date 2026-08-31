@@ -6,10 +6,17 @@ on:
   workflow_dispatch:
 
 env:
+<<<<<<< HEAD
   DOTNET_VERSION: "8.0.x"
   AWS_REGION: ${{ secrets.AWS_REGION }}
   EB_APPLICATION_NAME: ${{ secrets.EB_APPLICATION_NAME }}
   EB_ENVIRONMENT_NAME: ${{ secrets.EB_ENVIRONMENT_NAME }}
+=======
+  DOTNET_VERSION: "6.0.x"
+  AWS_REGION: "ap-south-1"
+  EB_APPLICATION_NAME: "simple_api"
+  EB_ENVIRONMENT_NAME: "Simpleapi-env"
+>>>>>>> 98203f35c9ab565f9426d457d19a28ee5ad47f00
 
 jobs:
   build-and-deploy:
@@ -50,5 +57,6 @@ jobs:
           version_label: ${{ github.sha }}
           region: ${{ env.AWS_REGION }}
           deployment_package: deploy.zip
+          use_existing_version_if_available: true
           wait_for_deployment: true
           wait_for_environment_recovery: 300
