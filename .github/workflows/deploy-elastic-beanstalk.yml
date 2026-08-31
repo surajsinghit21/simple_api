@@ -6,17 +6,10 @@ on:
   workflow_dispatch:
 
 env:
-<<<<<<< HEAD
   DOTNET_VERSION: "8.0.x"
-  AWS_REGION: ${{ secrets.AWS_REGION }}
-  EB_APPLICATION_NAME: ${{ secrets.EB_APPLICATION_NAME }}
-  EB_ENVIRONMENT_NAME: ${{ secrets.EB_ENVIRONMENT_NAME }}
-=======
-  DOTNET_VERSION: "6.0.x"
   AWS_REGION: "ap-south-1"
   EB_APPLICATION_NAME: "simple_api"
   EB_ENVIRONMENT_NAME: "Simpleapi-env"
->>>>>>> 98203f35c9ab565f9426d457d19a28ee5ad47f00
 
 jobs:
   build-and-deploy:
@@ -30,10 +23,14 @@ jobs:
         with:
           dotnet-version: ${{ env.DOTNET_VERSION }}
 
+      - name: Restore
+        run: dotnet restore SimpleApi.csproj
+
       - name: Publish
         run: >
           dotnet publish SimpleApi.csproj
           -c Release
+          --no-restore
           -o ./publish
 
       - name: Prepare Elastic Beanstalk bundle
@@ -54,9 +51,8 @@ jobs:
           aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           application_name: ${{ env.EB_APPLICATION_NAME }}
           environment_name: ${{ env.EB_ENVIRONMENT_NAME }}
-          version_label: ${{ github.sha }}
+          version_label: ${{ github.sha }}-${{ github.run_number }}
           region: ${{ env.AWS_REGION }}
           deployment_package: deploy.zip
-          use_existing_version_if_available: true
           wait_for_deployment: true
           wait_for_environment_recovery: 300
