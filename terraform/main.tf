@@ -119,12 +119,6 @@ resource "aws_elastic_beanstalk_environment" "this" {
   }
 
   setting {
-    namespace = "aws:elasticbeanstalk:environment"
-    name      = "LoadBalancerType"
-    value     = "application"
-  }
-
-  setting {
     namespace = "aws:autoscaling:launchconfiguration"
     name      = "InstanceType"
     value     = var.instance_type
