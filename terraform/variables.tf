@@ -19,7 +19,7 @@ variable "environment_name" {
 variable "environment_type" {
   type        = string
   description = "SingleInstance or LoadBalanced"
-  default     = "SingleInstance"
+  default     = "LoadBalanced"
 }
 
 variable "instance_type" {
