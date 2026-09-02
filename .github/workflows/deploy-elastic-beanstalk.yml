@@ -84,9 +84,6 @@ jobs:
           echo "application_name=$(terraform output -raw application_name)" >> "$GITHUB_OUTPUT"
           echo "environment_name=$(terraform output -raw environment_name)" >> "$GITHUB_OUTPUT"
 
-      - name: Terraform Destroy
-        run: terraform destroy -auto-approve
-
   deploy:
     name: Deploy application
     needs: terraform
